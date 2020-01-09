@@ -98,6 +98,7 @@ store.dispatch(decrease());
 store.dispatch(changeText('안녕하세요'));
 store.dispatch(addToList({id: 1, text: '우와'}));
 
+window.store = store;
 
 
 
