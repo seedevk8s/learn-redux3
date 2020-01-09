@@ -90,6 +90,8 @@ const listener = () => {
     const state = store.getState();
     console.log(state);
 };
+const unsubscribe = store.subscribe(listener);
+// unsubscribe()     구독을 해제하고 싶을 때는 unsubscribe() 를 호출하면 됩니다.
 
 
 
