@@ -1,4 +1,4 @@
-import { createStore } from "redux";
+import { createStore } from 'redux';
 
 // createStore는 스토어를 만들어주는 함수
 // 리액트 프로젝트에서는 단 하나의 스토어를 만듦
@@ -48,7 +48,7 @@ const addToList = item => ({
 // 새로운 상태를 만드는 함수임.
 // 중요-- 리듀서에서는 불변성을 꼭 지켜줘야 함.
 
-function reducer(state, action) {
+function reducer(state = initialState, action) {
     switch (action.type) {
         case INCREASE:
             return {
@@ -74,6 +74,35 @@ function reducer(state, action) {
             return state;
     }
 }
+
+// 스토어 (Store) : 리덕스에서는 한 애플리케이션당 하나의 스토어를 만들게 됨.
+// 스토어 안에는, 현재의 앱 상태와, 리듀서가 들어가있고, 추가적으로 몇가지 내장 함수들이 있음.
+/* 스토어 만들기 */
+const store = createStore(reducer);
+
+console.log(store.getState());  //현재 store 안에 들어있는 상태를 조회.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
