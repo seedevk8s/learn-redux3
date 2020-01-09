@@ -85,7 +85,6 @@ console.log(store.getState());  //현재 store 안에 들어있는 상태를 조
 
 
 // 스토어안에 들어있는 상태가 바뀔 때 마다 호출되는 listener 함수
-/* 스토어는 뷰 레이어 바인딩(listener)에게 애플리케이션 상태가 변경되었다는 것을 알린다. */
 const listener = () => {
     const state = store.getState();
     console.log(state);
@@ -93,6 +92,11 @@ const listener = () => {
 const unsubscribe = store.subscribe(listener);
 // unsubscribe()     구독을 해제하고 싶을 때는 unsubscribe() 를 호출하면 됩니다.
 
+// 액션들을 디스패치 해봅시다.  뷰에게 화면을 업데이트하도록 요청
+store.dispatch(increase());
+store.dispatch(decrease());
+store.dispatch(changeText('안녕하세요'));
+store.dispatch(addToList({id: 1, text: '우와'}));
 
 
 
