@@ -42,9 +42,38 @@ const addToList = item => ({
    item
 });
 
+// 리듀서 (Reducer) : 변화를 일으키는 함수임.  현재의 상태와, 전달 받은 액션을 참고하여 새로운 상태를 만들어서 반환하는 함수..
+/* 리듀서 만들기 */
+// 위 액션 생성함수들을 통해 만들어진 객체를 참조하여
+// 새로운 상태를 만드는 함수임.
+// 중요-- 리듀서에서는 불변성을 꼭 지켜줘야 함.
 
-
-
+function reducer(state, action) {
+    switch (action.type) {
+        case INCREASE:
+            return {
+              ...state,
+              counter: state.counter + 1
+            };
+        case DECREASE:
+            return {
+                ...state,
+                counter: state.counter - 1
+            };
+        case CHANGE_TEXT:
+            return {
+              ...state,
+              text: action.text
+            };
+        case ADD_TO_LIST:
+            return {
+              ...state,
+                list: state.list.concat(action.item)
+            };
+        default:
+            return state;
+    }
+}
 
 
 
