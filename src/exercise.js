@@ -84,6 +84,12 @@ console.log(store.getState());  //현재 store 안에 들어있는 상태를 조
 
 
 
+// 스토어안에 들어있는 상태가 바뀔 때 마다 호출되는 listener 함수
+/* 스토어는 뷰 레이어 바인딩(listener)에게 애플리케이션 상태가 변경되었다는 것을 알린다. */
+const listener = () => {
+    const state = store.getState();
+    console.log(state);
+};
 
 
 
