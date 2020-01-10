@@ -11,7 +11,7 @@ function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
         <div>
             <h1>{number}</h1>
             <div>
-                <input type="number" value={diff} min="1" onChange={onChange}/>
+                <input type="number" value={diff} onChange={onChange}/>
                 <button onClick={onIncrease}>+</button>
                 <button onClick={onDecrease}>-</button>
             </div>
