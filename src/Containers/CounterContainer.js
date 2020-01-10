@@ -22,9 +22,13 @@ function CounterContainer() {
 
 
     return (
-        <Counter>
-
-        </Counter>
+        <Counter
+            number={number}
+            diff={diff}
+            onIncrease={onIncrease}
+            onDecrease={onDecrease}
+            onSetDiff={onSetDiff}
+        />
     );
 }
 
