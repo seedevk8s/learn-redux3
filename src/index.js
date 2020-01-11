@@ -6,9 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from "redux";
 import rootReducer from './modules';
+import { composeWithDevTools} from "redux-devtools-extension";          // 리덕스 개발자 도구
 
 // 스토어를 만듭니다.
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 // 스토어의 상태를 확인해봅시다.
 console.log(store.getState());
 
